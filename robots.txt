@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cedma-enterprise.org/sitemap.xml
