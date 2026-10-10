@@ -17,6 +17,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `js/main.js` | Mobile menu, calendar filter, and agenda tabs |
 | `assets/fonts/` | Brand fonts as woff2 (Latin and Latin Extended subsets) |
 | `assets/logomark/` | Logomark in rgb, rgb-dark, black, and white, as SVG with PNG fallbacks |
+| `assets/logo/` | Full logo (logomark and wordmark) in rgb, rgb-dark, black, and white, as SVG and PNG. Not used by the site; kept here so other sites and documents can link to it |
 | `assets/board/` | Board headshots |
 | `assets/awards/` | Award winner photos |
 | `assets/events/` | Conference and venue photos |
