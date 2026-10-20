@@ -73,6 +73,8 @@ Redirects from the old site's URLs are handled in the nginx config, not here.
 
 **After any change,** update the `lastmod` date in `sitemap.xml` for the pages you changed.
 
+**After changing CSS or JavaScript,** update the `?v=` number on the `css/styles.css`, `css/fonts.css`, and `js/main.js` links in every page (it is the date of the change, for example `?v=20261020`). This makes browsers fetch the new files instead of using an old copy from their cache.
+
 ## SEO
 
 - Every page has its own title, meta description (120 to 155 characters), canonical URL, and Open Graph tags. Keep these up to date when page content changes.
