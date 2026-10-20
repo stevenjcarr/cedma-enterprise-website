@@ -376,6 +376,9 @@ input:focus-visible { border-color: var(--signal-blue); }
 .ag-row__title-minor { color: var(--text-muted); }
 .ag-row__who { font-size: 0.9375rem; line-height: 1.5; color: var(--slate-mid); }
 .ag-row--minor .ag-row__who { color: var(--text-muted); }
+.ag-topics { list-style: none; margin: 2px 0 0; padding: 0; border-top: 1px solid var(--warm-grey); max-width: 560px; }
+.ag-topics li { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--warm-grey); font-size: 1rem; line-height: 1.5; }
+.ag-topics__lead { color: var(--text-muted); text-align: right; white-space: nowrap; }
 .ag-sub { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; padding-left: 16px; border-left: 2px solid var(--amber-pale); }
 .ag-sub__item { display: flex; flex-direction: column; gap: 4px; }
 .ag-sub__title { font-weight: 500; color: var(--deep-slate); }
