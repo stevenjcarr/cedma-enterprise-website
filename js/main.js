@@ -131,5 +131,25 @@
     });
     track.style.setProperty("--ticker-duration", Math.max(items.length * 4.5, 30) + "s");
     track.classList.add("is-looping");
+
+    // Pause button, so visitors can stop the movement
+    var head = document.querySelector(".member-ticker__head");
+    if (head) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "ticker-toggle";
+      btn.setAttribute("aria-pressed", "false");
+      var set = function (paused) {
+        track.classList.toggle("is-paused", paused);
+        btn.setAttribute("aria-pressed", String(paused));
+        btn.innerHTML = paused
+          ? '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1 L9 5 L2 9 Z" fill="currentColor"/></svg>'
+          : '<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 1 H4 V9 H2 Z M6 1 H8 V9 H6 Z" fill="currentColor"/></svg>';
+        btn.setAttribute("aria-label", paused ? "Play the member logos" : "Pause the member logos");
+      };
+      set(false);
+      btn.addEventListener("click", function () { set(!track.classList.contains("is-paused")); });
+      head.appendChild(btn);
+    }
   }
 })();

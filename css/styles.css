@@ -778,10 +778,14 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 /* Home: members logo ticker */
 .member-ticker { padding: 0 0 clamp(48px, 7vw, 88px); display: flex; flex-direction: column; gap: 20px; }
 .member-ticker h2 { margin: 0; }
+.member-ticker__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.member-ticker__track.is-looping.is-paused { animation-play-state: paused; }
+.ticker-toggle { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; background: none; border: 0; border-radius: var(--radius); color: var(--text-muted); cursor: pointer; }
+.ticker-toggle:hover { color: var(--amber-text); }
+@media (prefers-reduced-motion: reduce) { .ticker-toggle { display: none; } }
 .member-ticker__viewport { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
 .member-ticker__track { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 56px; }
 .member-ticker__track.is-looping { flex-wrap: nowrap; justify-content: flex-start; width: max-content; animation: member-scroll var(--ticker-duration, 45s) linear infinite; }
-.member-ticker__viewport:hover .member-ticker__track { animation-play-state: paused; }
 .member-ticker__viewport:has(.member-ticker__track:not(.is-looping)) { -webkit-mask-image: none; mask-image: none; padding: 0 24px; }
 .member-ticker__item { flex: 0 0 auto; height: 64px; display: flex; align-items: center; justify-content: center; }
 /* Each logo sets --b (below 1 darkens) or --o (below 1 lightens) so they all show at a similar gray */
