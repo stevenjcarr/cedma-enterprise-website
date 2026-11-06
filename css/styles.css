@@ -763,3 +763,14 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .sigs-start.feature-callout { margin-top: 48px; }
 .defs--wide div { grid-template-columns: 260px 1fr; }
 @media (max-width: 760px) { .defs--wide div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+
+/* Board: chair and vice chair stand out */
+.person--chair { background: var(--deep-slate); border-color: var(--deep-slate); color: var(--warm-white); }
+.person--chair h3 { color: var(--warm-white); }
+.person--chair .meta { color: var(--warm-grey-dark); }
+.person--chair .avatar { box-shadow: 0 0 0 3px var(--deep-slate), 0 0 0 6px var(--aged-amber); }
+.person--chair .li-link { color: var(--warm-white); }
+.person--chair .li-icon { background: var(--warm-white); color: var(--deep-slate); }
+.person--vice { background: var(--amber-pale); border: 1.5px solid var(--aged-amber); }
+.person--vice .tag { background: var(--warm-white); color: #8C6420; }
+.person--chair .tag { background: var(--aged-amber); color: var(--deep-slate); }
