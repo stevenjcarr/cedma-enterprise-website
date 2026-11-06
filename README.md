@@ -22,7 +22,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `assets/awards/` | Award winner photos |
 | `assets/events/` | Conference and venue photos |
 | `assets/speakers/` | Conference speaker photos, shown on the home page |
-| `assets/sponsors/` | Sponsor logos, as supplied by each sponsor |
+| `assets/partners/` | Partner logos, as supplied by each partner |
 | `assets/share.png` | Social preview image used for LinkedIn and other link previews |
 | `assets/favicon*`, `apple-touch-icon.png` | Browser and device icons |
 | `robots.txt`, `sitemap.xml` | Search engine files |
@@ -40,7 +40,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `about.html` | About us |
 | `board.html` | The board |
 | `awards.html` | Awards |
-| `sponsors.html` | Sponsors |
+| `partners.html` | Partners |
 | `membership.html` | Membership |
 | `policies.html` | Policies, including contact details and the registered office |
 | `code-of-conduct.html` | Member Code of Conduct |
@@ -65,7 +65,7 @@ Redirects from the old site's URLs are handled in the nginx config, not here.
 
 **Adding a newsletter or survey.** Add the link in `research.html`. Newsletter PDFs are hosted on the members site, so link to the file there.
 
-**Changing sponsors.** Add the logo to `assets/sponsors/` and edit `sponsors.html`. Keep the section order: Annual, Booth, Conference and Innovation Award, then Tuesday drinks reception. Give each logo `width` and `height` attributes so the page doesn't shift while it loads.
+**Changing partners.** Add the logo to `assets/partners/` and edit `partners.html`. Keep the section order: Annual, Booth, Conference and Innovation Award, then Tuesday drinks reception. Give each logo `width` and `height` attributes so the page doesn't shift while it loads.
 
 **Changing board members.** Add a square headshot to `assets/board/` (named `firstname-lastname.jpg`) and edit `board.html`.
 
@@ -101,5 +101,5 @@ The site follows the CEdMA Enterprise Brand Guidelines (v2.2).
 
 - No prices anywhere on the site.
 - Contact is by email only, at community@cedma-enterprise.org. The only postal address is the registered office on the Policies page.
-- There are no forms. Membership applications and sponsor enquiries go by email.
+- There are no forms. Membership applications and partner enquiries go by email.
 - The Terms and Conditions and the Member Code of Conduct are legal text. Change them only when the approved wording changes.
