@@ -482,13 +482,13 @@ h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.3125rem; line
 /* ---------- Home: conference feature ---------- */
 .conf-feature { background: var(--deep-slate); color: var(--warm-white); padding-block: var(--section-y); }
 .conf-feature .container { display: flex; flex-direction: column; gap: 40px; }
-.conf-feature__top { display: grid; grid-template-columns: 8fr 4fr; gap: 32px; align-items: end; }
+.conf-feature__top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: end; }
 .conf-feature__copy { display: flex; flex-direction: column; gap: 18px; }
 .conf-feature h2 { color: var(--warm-white); font-size: clamp(2.25rem, 4.2vw, 3.5rem); line-height: 1.05; }
 .conf-feature h2 em { color: var(--amber-light); }
 .conf-feature__meta { color: var(--amber-light); }
 .conf-feature__copy > p:last-child { color: var(--on-dark-muted); font-size: 1.125rem; max-width: 62ch; }
-.conf-feature__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.conf-feature__actions { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; }
 .speakers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
 .speaker { display: flex; flex-direction: column; gap: 14px; padding: 24px; background: var(--slate-mid); border-radius: var(--radius); }
 .speaker__who { display: flex; align-items: center; gap: 14px; }
@@ -497,8 +497,8 @@ h3 { font-family: var(--font-body); font-weight: 600; font-size: 1.3125rem; line
 .speaker__role { display: block; font-size: 0.875rem; line-height: 1.4; color: var(--on-dark-muted); }
 .speaker__talk { font-family: var(--font-display); font-style: italic; font-size: 1.3125rem; line-height: 1.25; }
 .conf-feature__next { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px 32px; padding-top: 24px; border-top: 1px solid var(--slate-mid); color: var(--on-dark-muted); }
-.conf-feature__next .mono { color: var(--amber-light); text-transform: uppercase; margin-right: 12px; }
-@media (max-width: 980px) { .conf-feature__top { grid-template-columns: minmax(0, 1fr); } .speakers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.conf-feature__next .mono { color: var(--amber-light); text-transform: uppercase; font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.18em; margin-right: 16px; }
+@media (max-width: 980px) { .conf-feature__top { grid-template-columns: minmax(0, 1fr); } .conf-feature__actions { align-items: flex-start; } .speakers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .speakers { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Home: research and join ---------- */
@@ -684,7 +684,7 @@ button.cta-link { background: none; border: 0; padding: 0; font-family: var(--fo
 
 /* Home conference intro: title left, description and button right */
 .conf-feature__actions { gap: 22px; }
-.conf-feature__actions > p { margin: 0; color: var(--on-dark-muted); font-size: 1.125rem; line-height: 1.65; }
+.conf-feature__actions > p { margin: 0; max-width: 26rem; color: var(--on-dark-muted); font-size: 1.125rem; line-height: 1.65; }
 
 /* Conference travel directions */
 .travel { margin-top: 56px; display: flex; flex-direction: column; gap: 20px; }
