@@ -65,7 +65,7 @@ Redirects from the old site's URLs are handled in the nginx config, not here.
 
 **Adding a newsletter or survey.** Add the link in `research.html`. Newsletter PDFs are hosted on the members site, so link to the file there.
 
-**Changing partners.** Add the logo to `assets/partners/` and edit `partners.html`. Keep the section order: Annual, Booth, Conference and Innovation Award, then Tuesday drinks reception. Give each logo `width` and `height` attributes so the page doesn't shift while it loads.
+**Changing partners.** Add the logo to `assets/partners/` and edit `partners.html`. Annual partners come first, then one section for the partners of the most recent conference. Give each logo `width` and `height` attributes so the page doesn't shift while it loads.
 
 **Changing board members.** Add a square headshot to `assets/board/` (named `firstname-lastname.jpg`) and edit `board.html`.
 

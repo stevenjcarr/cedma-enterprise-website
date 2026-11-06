@@ -597,13 +597,6 @@ button.cta-link { background: none; border: 0; padding: 0; font-family: var(--fo
 .award-now__label { color: var(--amber-text); text-transform: uppercase; letter-spacing: 0.1em; }
 .award-now__name { font-family: var(--font-display); font-weight: 600; font-size: 2.125rem; color: var(--deep-slate); }
 .award-now__name--pending { font-style: italic; color: var(--text-muted); }
-.award-gallery { display: grid; grid-template-columns: 5fr 7fr; grid-template-rows: 1fr 1fr; gap: 24px; }
-.award-gallery figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.award-gallery img { width: 100%; flex-grow: 1; min-height: 0; object-fit: contain; background: var(--deep-slate); border-radius: var(--radius); }
-.award-gallery__main { grid-row: span 2; }
-.award-gallery figcaption { font-size: 0.9375rem; color: var(--text-muted); }
-.award-gallery figcaption strong { color: var(--deep-slate); font-weight: 600; }
-@media (max-width: 860px) { .award-gallery { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; } .award-gallery__main { grid-row: auto; } }
 .table-wrap { overflow-x: auto; }
 .winners-table { width: 100%; border-collapse: collapse; min-width: 520px; }
 .winners-table th, .winners-table td { text-align: left; padding: 16px 16px 16px 0; border-bottom: 1px solid var(--warm-grey-dark); font-weight: 500; color: var(--deep-slate); }
@@ -721,12 +714,12 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .save-date > * { position: relative; }
 
 /* Awards: 2026 photo beside the summary */
-.awards-2026 { grid-column: span 6; }
-.awards-2026__photo { grid-column: 8 / span 5; margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.awards-2026__photo img { width: 100%; height: auto; border-radius: var(--radius); }
-.awards-2026__photo figcaption { font-size: 0.9375rem; color: var(--text-muted); }
-.awards-2026__photo figcaption strong { color: var(--deep-slate); font-weight: 600; }
-@media (max-width: 980px) { .awards-2026, .awards-2026__photo { grid-column: 1 / -1; } .awards-2026__photo { margin-top: 32px; } }
+.award-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.award-row figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.award-row img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; background: var(--deep-slate); border-radius: var(--radius); }
+.award-row figcaption { font-size: 0.9375rem; color: var(--text-muted); }
+.award-row figcaption strong { color: var(--deep-slate); font-weight: 600; }
+@media (max-width: 860px) { .award-row { grid-template-columns: minmax(0, 1fr); } }
 
 /* Header: separate the account actions from the menu */
 @media (min-width: 1101px) {
