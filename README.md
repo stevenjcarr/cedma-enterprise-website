@@ -72,10 +72,10 @@ Redirects from the old site's URLs are handled in the nginx config, not here.
 **Changing the members ticker.** The home page lists each member once, in the `member-ticker__track` list in `index.html`. To add a member, put the logo in `assets/members/` (SVG, or PNG with a transparent background at least 400px wide, named after the company, such as `acme.svg`) and add a line in alphabetical order:
 
 ```html
-<li class="member-ticker__item"><img src="assets/members/acme.svg" alt="Acme" width="130" height="26" loading="lazy" decoding="async"></li>
+<li class="member-ticker__item"><img src="assets/members/acme.svg" alt="Acme" width="130" height="26" loading="lazy" decoding="async" style="--o: 0.7"></li>
 ```
 
-Trim any empty space around the logo first. Set `width` and `height` so every logo covers a similar area: about 3,400 square pixels, no taller than 52px and no wider than 170px (a 5:1 wordmark is about 130 by 26, a square icon about 52 by 52). To remove a member, delete its line and its file. `js/main.js` shuffles the list on each page load, copies it to make the loop seamless and sets the speed from the number of logos, so nothing else needs changing.
+Trim any empty space around the logo first. Set `width` and `height` so every logo covers a similar area: about 3,400 square pixels, no taller than 52px and no wider than 170px (a 5:1 wordmark is about 130 by 26, a square icon about 52 by 52). Each logo also has `--b` or `--o` in its `style` so they all show at a similar gray: `--b` below 1 darkens a light logo, and `--o` below 1 lightens a dark one. Start a new logo without either and adjust until it matches its neighbors. To remove a member, delete its line and its file. `js/main.js` shuffles the list on each page load, copies it to make the loop seamless and sets the speed from the number of logos, so nothing else needs changing.
 
 **Changing board members.** Add a square headshot to `assets/board/` (named `firstname-lastname.jpg`) and edit `board.html`.
 

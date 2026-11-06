@@ -784,7 +784,10 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .member-ticker__viewport:hover .member-ticker__track { animation-play-state: paused; }
 .member-ticker__viewport:has(.member-ticker__track:not(.is-looping)) { -webkit-mask-image: none; mask-image: none; padding: 0 24px; }
 .member-ticker__item { flex: 0 0 auto; height: 64px; display: flex; align-items: center; justify-content: center; }
-.member-ticker__item img { display: block; filter: grayscale(1); opacity: 0.75; transition: filter 0.2s ease, opacity 0.2s ease; }
+/* Each logo sets --b (below 1 darkens) or --o (below 1 lightens) so they all show at a similar gray */
+.member-ticker__item img { display: block; filter: grayscale(1) brightness(var(--b, 1)); opacity: var(--o, 1); transition: filter 0.2s ease, opacity 0.2s ease; }
+/* Logos with white text on a light brand color need a darker gray to stay readable */
+.member-ticker__item--deepen img { filter: grayscale(1) brightness(0.7) contrast(2); }
 .member-ticker__item img:hover { filter: none; opacity: 1; }
 @keyframes member-scroll { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 28px)); } }
 @media (prefers-reduced-motion: reduce) {
