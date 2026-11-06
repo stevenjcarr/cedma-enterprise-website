@@ -14,7 +14,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `404.html` | Not found page. Uses root-absolute paths so it works at any URL depth |
 | `css/styles.css` | All site styles. Brand colors, fonts, and spacing are variables at the top |
 | `css/fonts.css` | `@font-face` rules for the self-hosted brand fonts |
-| `js/main.js` | Mobile menu, calendar filter, and agenda tabs |
+| `js/main.js` | Mobile menu, calendar filter, agenda tabs, and the members ticker loop |
 | `js/consent.js` | Cookie consent banner. Loads Google Tag Manager only after a visitor accepts analytics |
 | `assets/fonts/` | Brand fonts as woff2 (Latin and Latin Extended subsets) |
 | `assets/logomark/` | Logomark in rgb, rgb-dark, black, and white, as SVG with PNG fallbacks |
@@ -24,6 +24,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `assets/events/` | Conference and venue photos |
 | `assets/speakers/` | Conference speaker photos, shown on the home page |
 | `assets/partners/` | Partner logos, as supplied by each partner |
+| `assets/members/` | Member logos for the home page ticker |
 | `assets/share.png` | Social preview image used for LinkedIn and other link previews |
 | `assets/favicon*`, `apple-touch-icon.png` | Browser and device icons |
 | `robots.txt`, `sitemap.xml` | Search engine files |
@@ -67,6 +68,14 @@ Redirects from the old site's URLs are handled in the nginx config, not here.
 **Adding a newsletter or survey.** Add the link in `research.html`. Newsletter PDFs are hosted on the members site, so link to the file there.
 
 **Changing partners.** Add the logo to `assets/partners/` and edit `partners.html`. Annual partners come first, then one section for the partners of the most recent conference. Give each logo `width` and `height` attributes so the page doesn't shift while it loads.
+
+**Changing the members ticker.** The home page lists each member once, in the `member-ticker__track` list in `index.html`. To add a member, put the logo in `assets/members/` (SVG, or PNG with a transparent background at least 400px wide, named after the company, such as `acme.svg`) and add a line in alphabetical order:
+
+```html
+<li class="member-ticker__item"><img src="assets/members/acme.svg" alt="Acme" width="130" height="26" loading="lazy" decoding="async"></li>
+```
+
+Trim any empty space around the logo first. Set `width` and `height` so every logo covers a similar area: about 3,400 square pixels, no taller than 52px and no wider than 170px (a 5:1 wordmark is about 130 by 26, a square icon about 52 by 52). To remove a member, delete its line and its file. `js/main.js` shuffles the list on each page load, copies it to make the loop seamless and sets the speed from the number of logos, so nothing else needs changing.
 
 **Changing board members.** Add a square headshot to `assets/board/` (named `firstname-lastname.jpg`) and edit `board.html`.
 

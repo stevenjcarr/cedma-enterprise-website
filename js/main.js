@@ -1,4 +1,4 @@
-// CEdMA Enterprise site scripts: mobile menu, calendar filter, agenda tabs.
+// CEdMA Enterprise site scripts: mobile menu, calendar filter, agenda tabs, members ticker.
 (function () {
   "use strict";
   document.documentElement.classList.remove("no-js");
@@ -105,4 +105,31 @@
   window.addEventListener("afterprint", function () {
     document.body.classList.remove("printing-agenda");
   });
+
+})();
+
+// Members ticker
+(function () {
+  "use strict";
+  // The page lists each member once. Shuffle it, then copy it so the
+  // scroll loops without a gap, and set the speed from the number of logos.
+  var track = document.querySelector(".member-ticker__track");
+  if (track) {
+    var items = Array.prototype.slice.call(track.children);
+    // Shuffle so the logos appear in a different order on each visit
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = items[i]; items[i] = items[j]; items[j] = tmp;
+    }
+    items.forEach(function (item) { track.appendChild(item); });
+    items.forEach(function (item) {
+      var copy = item.cloneNode(true);
+      copy.setAttribute("aria-hidden", "true");
+      var img = copy.querySelector("img");
+      if (img) img.alt = "";
+      track.appendChild(copy);
+    });
+    track.style.setProperty("--ticker-duration", Math.max(items.length * 4.5, 30) + "s");
+    track.classList.add("is-looping");
+  }
 })();
