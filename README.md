@@ -15,6 +15,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `css/styles.css` | All site styles. Brand colors, fonts, and spacing are variables at the top |
 | `css/fonts.css` | `@font-face` rules for the self-hosted brand fonts |
 | `js/main.js` | Mobile menu, calendar filter, and agenda tabs |
+| `js/consent.js` | Cookie consent banner. Loads Google Tag Manager only after a visitor accepts analytics |
 | `assets/fonts/` | Brand fonts as woff2 (Latin and Latin Extended subsets) |
 | `assets/logomark/` | Logomark in rgb, rgb-dark, black, and white, as SVG with PNG fallbacks |
 | `assets/logo/` | Full logo (logomark and wordmark) in rgb, rgb-dark, black, and white, as SVG and PNG. Not used by the site; kept here so other sites and documents can link to it |
@@ -73,13 +74,21 @@ Redirects from the old site's URLs are handled in the nginx config, not here.
 
 **After any change,** update the `lastmod` date in `sitemap.xml` for the pages you changed.
 
-**After changing CSS or JavaScript,** update the `?v=` number on that file's link in every page. Use the Unix timestamp of the change (run `date +%s`), so each update gets a new number even on the same day. Each file has its own number: `css/styles.css`, `css/fonts.css`, and `js/main.js`. A new number makes browsers fetch the new file instead of using an old copy from their cache.
+**After changing CSS or JavaScript,** update the `?v=` number on that file's link in every page. Use the Unix timestamp of the change (run `date +%s`), so each update gets a new number even on the same day. Each file has its own number: `css/styles.css`, `css/fonts.css`, `js/main.js`, and `js/consent.js`. A new number makes browsers fetch the new file instead of using an old copy from their cache.
+
+## Analytics and cookies
+
+Google Analytics runs through Google Tag Manager, and only after a visitor accepts it in the cookie banner. `js/consent.js` is loaded in the head of every page. It sets Google Consent Mode to denied by default, shows the banner on a first visit, and loads Tag Manager only when the visitor accepts. The choice is kept in `localStorage` (key `cedma-analytics-consent`), and the Cookie settings link in the footer reopens the banner. Declining after accepting removes the `_ga` cookies and reloads the page.
+
+- Don't paste Google's standard Tag Manager snippet into pages. It loads Google before the visitor has chosen.
+- In Google Analytics, set data retention to 14 months, to match the Privacy Policy.
+- If you add tags in Tag Manager that set other cookies, list them in section 11 of `privacy.html`, and ask for consent before they run.
 
 ## SEO
 
 - Every page has its own title, meta description (120 to 155 characters), canonical URL, and Open Graph tags. Keep these up to date when page content changes.
 - The home page has Organization structured data, including the LinkedIn page. The conferences page has Event structured data.
-- Fonts are self-hosted, and the two main weights are preloaded. The site makes no requests to other servers, which keeps it fast and keeps the Privacy Policy accurate. If you add a third-party service, update `privacy.html`.
+- Fonts are self-hosted, and the two main weights are preloaded. The only third-party service is Google Analytics, through Google Tag Manager (container `GTM-NRC2X9RG`). If you add another, update `privacy.html`.
 - Submit `sitemap.xml` in Google Search Console after launch.
 
 ## Brand
