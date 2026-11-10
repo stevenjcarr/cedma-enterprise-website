@@ -404,7 +404,6 @@ a.logo-tile:hover { border-color: var(--aged-amber); }
 .partner--wide .logo-tile { height: 140px; }
 .partner--wide .logo-tile img { max-height: 72px; }
 .partner--wide h3 { font-size: 1.875rem; }
-.partner__links { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.9375rem; line-height: 1.4; }
 @media (max-width: 860px) { .partner__logo, .partner__body { grid-column: 1 / -1; } }
 
 .toc .label { margin-bottom: 8px; }
