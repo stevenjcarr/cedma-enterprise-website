@@ -22,9 +22,9 @@
   <link rel="preload" href="assets/fonts/albert-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fonts.css?v=1791616678">
-  <link rel="stylesheet" href="css/styles.css?v=1794301820">
+  <link rel="stylesheet" href="css/styles.css?v=1794410636">
   <script src="js/consent.js?v=1793973585"></script>
-  <script src="js/main.js?v=1793993341" defer></script>
+  <script src="js/main.js?v=1794410071" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -65,7 +65,7 @@
           </ol>
         </nav>
         <h1>Calendar</h1>
-        <p class="lead">Every SIG meeting, workshop, and conference in one place. SIG meetings run online at 4pm UK (5pm Central Europe, 11am Eastern, 8am Pacific).</p>
+        <p class="lead">Every SIG session, workshop, and conference in one place. SIG sessions run online once a month at 3pm UK (4pm Central Europe, 10am Eastern, 7am Pacific), and each one shows your own local time.</p>
       </div>
       <div class="container page-head__mark"><span class="page-head__dot"></span></div>
     </section>
@@ -78,23 +78,84 @@
             <button class="filter" type="button" data-filter="workshop" aria-pressed="false">Workshops</button>
             <button class="filter" type="button" data-filter="conference" aria-pressed="false">Conferences</button>
           </div>
+          <a class="btn btn--outline" href="sig-sessions.ics" download>Add SIG sessions to your calendar</a>
         </div>
         <h2>Upcoming</h2>
         <ul class="event-list card mt-md" data-list="upcoming">
           <li class="event-row" data-kind="sig">
             <span class="date-chip mono"><span class="date-chip__day">26</span><span class="date-chip__mon">Nov</span></span>
-            <span class="event-row__body"><span class="event-row__title">Training Partners SIG</span><span class="event-row__meta">Online &middot; 4pm UK, 11am Eastern, 8am Pacific</span></span>
+            <span class="event-row__body"><span class="event-row__title">Training Partners SIG</span><span class="event-row__meta"><time datetime="2026-11-26T16:00:00Z" data-utc="2026-11-26T16:00:00Z">Thu 26 Nov 2026 &middot; Online &middot; 4pm UK, 11am Eastern, 8am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
             <span class="tag tag--sage">SIG</span>
           </li>
           <li class="event-row" data-kind="sig">
             <span class="date-chip mono"><span class="date-chip__day">3</span><span class="date-chip__mon">Dec</span></span>
-            <span class="event-row__body"><span class="event-row__title">Certification SIG</span><span class="event-row__meta">Date to be confirmed &middot; Online &middot; 4pm UK, 11am Eastern, 8am Pacific</span></span>
+            <span class="event-row__body"><span class="event-row__title">Certification SIG</span><span class="event-row__meta"><time datetime="2026-12-03T16:00:00Z" data-utc="2026-12-03T16:00:00Z">Thu 3 Dec 2026, date to be confirmed &middot; Online &middot; 4pm UK, 11am Eastern, 8am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">10</span><span class="date-chip__mon">Dec</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: Future-proofing the education org</span><span class="event-row__meta"><time datetime="2026-12-10T15:00:00Z" data-utc="2026-12-10T15:00:00Z">Thu 10 Dec 2026 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">13</span><span class="date-chip__mon">Jan</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: ROI measurement</span><span class="event-row__meta"><time datetime="2027-01-13T15:00:00Z" data-utc="2027-01-13T15:00:00Z">Wed 13 Jan 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">10</span><span class="date-chip__mon">Feb</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: Skills gap and reskilling</span><span class="event-row__meta"><time datetime="2027-02-10T15:00:00Z" data-utc="2027-02-10T15:00:00Z">Wed 10 Feb 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">10</span><span class="date-chip__mon">Mar</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: STOP-START-CONTINUE</span><span class="event-row__meta"><time datetime="2027-03-10T15:00:00Z" data-utc="2027-03-10T15:00:00Z">Wed 10 Mar 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">14</span><span class="date-chip__mon">Apr</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: Future-proofing the education org</span><span class="event-row__meta"><time datetime="2027-04-14T14:00:00Z" data-utc="2027-04-14T14:00:00Z">Wed 14 Apr 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
             <span class="tag tag--sage">SIG</span>
           </li>
           <li class="event-row" data-kind="conference">
             <span class="date-chip mono"><span class="date-chip__day">26</span><span class="date-chip__mon">Apr</span></span>
             <span class="event-row__body"><span class="event-row__title">Spring Conference 2027</span><span class="event-row__meta">26 to 28 April 2027 &middot; Renaissance London Heathrow</span></span>
             <span class="tag tag--amber">Conference</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">12</span><span class="date-chip__mon">May</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: ROI measurement</span><span class="event-row__meta"><time datetime="2027-05-12T14:00:00Z" data-utc="2027-05-12T14:00:00Z">Wed 12 May 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">9</span><span class="date-chip__mon">Jun</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: Skills gap and reskilling</span><span class="event-row__meta"><time datetime="2027-06-09T14:00:00Z" data-utc="2027-06-09T14:00:00Z">Wed 9 Jun 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">14</span><span class="date-chip__mon">Jul</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: STOP-START-CONTINUE</span><span class="event-row__meta"><time datetime="2027-07-14T14:00:00Z" data-utc="2027-07-14T14:00:00Z">Wed 14 Jul 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">11</span><span class="date-chip__mon">Aug</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: Future-proofing the education org</span><span class="event-row__meta"><time datetime="2027-08-11T14:00:00Z" data-utc="2027-08-11T14:00:00Z">Wed 11 Aug 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">8</span><span class="date-chip__mon">Sep</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: ROI measurement</span><span class="event-row__meta"><time datetime="2027-09-08T14:00:00Z" data-utc="2027-09-08T14:00:00Z">Wed 8 Sep 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">13</span><span class="date-chip__mon">Oct</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: Skills gap and reskilling</span><span class="event-row__meta"><time datetime="2027-10-13T14:00:00Z" data-utc="2027-10-13T14:00:00Z">Wed 13 Oct 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
+          </li>
+          <li class="event-row" data-kind="sig">
+            <span class="date-chip mono"><span class="date-chip__day">10</span><span class="date-chip__mon">Nov</span></span>
+            <span class="event-row__body"><span class="event-row__title">SIG: STOP-START-CONTINUE</span><span class="event-row__meta"><time datetime="2027-11-10T15:00:00Z" data-utc="2027-11-10T15:00:00Z">Wed 10 Nov 2027 &middot; Online &middot; 3pm UK, 10am Eastern, 7am Pacific</time></span><span class="event-row__meta event-row__local" data-local hidden></span></span>
+            <span class="tag tag--sage">SIG</span>
           </li>
           <li class="event-row" data-kind="conference">
             <span class="date-chip mono"><span class="date-chip__day">TBC</span><span class="date-chip__mon">2027</span></span>

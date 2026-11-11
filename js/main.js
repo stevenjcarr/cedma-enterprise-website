@@ -42,6 +42,9 @@
     filters.forEach(function (b) {
       b.addEventListener("click", function () { apply(b.dataset.filter); });
     });
+    // A link such as calendar.html#sig opens with that filter already applied
+    var start = window.location.hash.replace("#", "");
+    if (start && document.querySelector('.filter[data-filter="' + start + '"]')) apply(start);
   }
 
   // Agenda tabs
@@ -152,4 +155,19 @@
       head.appendChild(btn);
     }
   }
+})();
+
+// SIG sessions: show each session's time in the visitor's own time zone
+(function () {
+  "use strict";
+  var rows = document.querySelectorAll("time[data-utc]");
+  if (!rows.length || !window.Intl) return;
+  try {
+    var fmt = new Intl.DateTimeFormat(undefined, { weekday: "short", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+    Array.prototype.forEach.call(rows, function (t) {
+      var row = t.closest("li");
+      var out = row && row.querySelector("[data-local]");
+      if (out) { out.textContent = "Your time: " + fmt.format(new Date(t.getAttribute("data-utc"))); out.hidden = false; }
+    });
+  } catch (e) { /* leave the UK and US times on their own */ }
 })();
