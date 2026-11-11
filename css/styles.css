@@ -845,7 +845,7 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .lcg-principle h4 { margin: 0 0 4px; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--amber-light); }
 .lcg-principle p { margin: 0; font-size: 0.9375rem; }
 .lcg-quote { font-family: var(--font-display); font-style: italic; font-size: 1.75rem; line-height: 1.25; color: var(--warm-white); margin: 12px 0 16px; padding-left: 16px; border-left: 3px solid var(--aged-amber); }
-.lcg-cta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px 32px; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--slate-mid); }
+.lcg-cta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px 32px; padding: 24px 0; border-block: 1px solid var(--slate-mid); }
 .lcg-cta p { margin: 0; max-width: 60ch; }
 .sig-archive { margin-top: 0; }
 @media (max-width: 560px) { .lcg-principles { grid-template-columns: minmax(0, 1fr); } }
