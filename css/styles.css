@@ -691,7 +691,6 @@ button.cta-link { background: none; border: 0; padding: 0; font-family: var(--fo
 /* Conference travel directions */
 .travel { margin-top: 56px; display: flex; flex-direction: column; gap: 20px; }
 .travel h3 { font-size: 1.3125rem; }
-.card--outline { background: var(--warm-white); border: 1px solid var(--warm-grey-dark); box-shadow: none; }
 .travel__card { padding: 24px; gap: 10px; }
 .travel__card .label { margin: 0; }
 @media (max-width: 980px) { .travel .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
