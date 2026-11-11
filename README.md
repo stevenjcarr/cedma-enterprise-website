@@ -27,7 +27,6 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 | `assets/members/` | Member logos for the home page ticker |
 | `assets/share.png` | Social preview image used for LinkedIn and other link previews |
 | `assets/favicon*`, `apple-touch-icon.png` | Browser and device icons |
-| `sig-sessions.ics` | Calendar file of the year's SIG sessions, linked from the SIGs page |
 | `robots.txt`, `sitemap.xml` | Search engine files |
 
 ## Pages
@@ -55,7 +54,7 @@ Members-only content (surveys, pulse results, newsletters, and SIG meeting pages
 Copy the whole folder to the web root. The server should:
 
 - serve `404.html` for missing pages (in nginx, `error_page 404 /404.html;`)
-- serve `.woff2` files as `font/woff2`, and `.ics` files as `text/calendar`
+- serve `.woff2` files as `font/woff2`
 - send `X-Robots-Tag: noindex` on any test or staging copy, because `robots.txt` allows indexing
 
 Redirects from the old site's URLs are handled in the nginx config, not here.
