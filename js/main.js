@@ -24,27 +24,43 @@
   var filters = document.querySelectorAll(".filter[data-filter]");
   if (filters.length) {
     var lists = document.querySelectorAll("[data-list]");
+    var current = "all";
     var apply = function (kind) {
+      current = kind;
       filters.forEach(function (b) {
         b.setAttribute("aria-pressed", String(b.dataset.filter === kind));
       });
       lists.forEach(function (list) {
+        // Lists with data-limit show only the first few matches until "See more" is used
+        var limit = parseInt(list.dataset.limit, 10) || 0;
+        var more = list.id ? document.querySelector('[data-more-for="' + list.id + '"]') : null;
+        var expanded = more ? more.getAttribute("aria-expanded") === "true" : true;
         var shown = 0;
         list.querySelectorAll("[data-kind]").forEach(function (item) {
           var match = kind === "all" || item.dataset.kind === kind;
-          item.hidden = !match;
           if (match) shown++;
+          item.hidden = !match || (limit > 0 && !expanded && shown > limit);
         });
         var empty = list.querySelector(".empty-note");
         if (empty) empty.hidden = shown > 0;
+        if (more) {
+          more.hidden = !(limit > 0 && shown > limit);
+          more.textContent = expanded ? "See less" : "See more";
+        }
       });
     };
     filters.forEach(function (b) {
       b.addEventListener("click", function () { apply(b.dataset.filter); });
     });
+    document.querySelectorAll("[data-more-for]").forEach(function (more) {
+      more.addEventListener("click", function () {
+        more.setAttribute("aria-expanded", String(more.getAttribute("aria-expanded") !== "true"));
+        apply(current);
+      });
+    });
     // A link such as calendar.html#sig opens with that filter already applied
     var start = window.location.hash.replace("#", "");
-    if (start && document.querySelector('.filter[data-filter="' + start + '"]')) apply(start);
+    apply(start && document.querySelector('.filter[data-filter="' + start + '"]') ? start : "all");
   }
 
   // Agenda tabs
