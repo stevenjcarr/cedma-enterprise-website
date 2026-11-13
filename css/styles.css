@@ -433,7 +433,6 @@ a.logo-tile:hover { border-color: var(--aged-amber); }
 .pathway { gap: 14px; padding: 32px; }
 .pathway h3 { font-size: 1.875rem; }
 .pathway .steps li { padding: 12px 0; border-bottom-color: var(--warm-grey); }
-.pathway__badge { display: flex; align-items: center; font-size: 0.9375rem; color: var(--slate-mid); margin-top: 6px; }
 .journey { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
 .journey__step { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; border-top: 3px solid var(--deep-slate); }
 .journey__step:last-child { border-top-color: var(--aged-amber); }
