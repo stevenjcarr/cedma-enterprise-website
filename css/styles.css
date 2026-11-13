@@ -583,6 +583,7 @@ button.cta-link { background: none; border: 0; padding: 0; font-family: var(--fo
 .highlight-card__icon--square { width: 56px; height: 56px; color: var(--deep-slate); }
 .highlight-card__body { flex: 1; display: flex; flex-direction: column; gap: 8px; }
 .highlight-card__body p { margin: 0; }
+.highlight-card__body h2 { font-family: var(--font-body); font-size: 1.3125rem; line-height: 1.3; }
 @media (max-width: 720px) { .card.highlight-card { flex-direction: column; align-items: flex-start; } }
 
 /* Board */
@@ -768,13 +769,7 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .event-row[data-kind="conference"] .date-chip__mon { color: var(--amber-pale); }
 
 /* Feature callouts (CTTM, Membership, SIGs, Partners): one shared style */
-.feature-callout { margin-top: 0; padding: clamp(28px, 4vw, 40px) clamp(24px, 4vw, 48px); border-radius: var(--radius-lg); }
-.feature-callout > div { max-width: 720px; }
-.feature-callout h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
-.feature-callout p { font-size: 1.125rem; }
-.feature-callout p.meta { font-size: 0.9375rem; }
-.sigs-start.feature-callout { margin-top: 48px; }
-.defs--wide div { grid-template-columns: 260px 1fr; }
+.sigs-start.defs--wide div { grid-template-columns: 260px 1fr; }
 @media (max-width: 760px) { .defs--wide div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
 
 /* Board: chair and vice chair stand out */
