@@ -187,3 +187,13 @@
     });
   } catch (e) { /* leave the UK and US times on their own */ }
 })();
+
+// Calendar: hide a session's Register button once the session has finished
+(function () {
+  "use strict";
+  var now = Date.now();
+  Array.prototype.forEach.call(document.querySelectorAll("[data-register][data-ends]"), function (a) {
+    var end = Date.parse(a.getAttribute("data-ends"));
+    if (!isNaN(end) && now > end) a.hidden = true;
+  });
+})();

@@ -922,3 +922,27 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .present-grid { gap: 48px; align-items: start; }
 .present-cta { margin-top: 24px; }
 .present-grid .rule-list { margin-top: -12px; }
+/* Calendar: SIG sessions with a register button and details */
+.btn--sm { min-height: 40px; padding: 8px 16px; font-size: 0.9375rem; }
+.btn[hidden] { display: none; }
+.event-row--session { align-items: flex-start; }
+.event-row__body { min-width: 0; }
+.event-row__aside { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.event-row__aside .tag { align-self: center; }
+.event-row--session .event-row__aside { margin-top: 13px; }
+.event-row__presenter { color: var(--deep-slate); font-weight: 500; }
+.event-row__details { margin-top: 8px; }
+.event-row__details summary { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; font-size: 0.9375rem; font-weight: 600; color: var(--deep-slate); text-decoration: underline; text-decoration-color: var(--aged-amber); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.event-row__details summary::-webkit-details-marker { display: none; }
+.event-row__details summary::after { content: ""; width: 7px; height: 7px; border-right: 2px solid var(--aged-amber); border-bottom: 2px solid var(--aged-amber); transform: translateY(-2px) rotate(45deg); transition: transform 0.15s ease; }
+.event-row__details[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+.event-row__details summary:focus-visible { outline: 2px solid var(--aged-amber); outline-offset: 4px; border-radius: 2px; }
+.event-row__more { margin-top: 16px; max-width: 68ch; display: flex; flex-direction: column; gap: 10px; font-size: 0.9375rem; line-height: 1.6; color: var(--text); }
+.event-row__more p { margin: 0; }
+.event-row__more ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.event-row__lead { font-weight: 600; color: var(--deep-slate); }
+@media (max-width: 640px) {
+  .event-row--session .event-row__body { flex-basis: 100%; }
+  .event-row--session .event-row__aside { margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .event-row__details summary::after { transition: none; } }
