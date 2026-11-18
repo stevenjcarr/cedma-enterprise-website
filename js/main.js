@@ -197,3 +197,10 @@
     if (!isNaN(end) && now > end) a.hidden = true;
   });
 })();
+
+// Footer: keep the copyright year current
+(function () {
+  "use strict";
+  var year = String(new Date().getFullYear());
+  Array.prototype.forEach.call(document.querySelectorAll("[data-year]"), function (el) { el.textContent = year; });
+})();
