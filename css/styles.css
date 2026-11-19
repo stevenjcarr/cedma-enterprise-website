@@ -946,3 +946,11 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
   .event-row--session .event-row__aside { margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .event-row__details summary::after { transition: none; } }
+/* Development site notice (shown only on the preview host) */
+.dev-banner { background: var(--amber-pale); border-bottom: 1.5px solid var(--aged-amber); color: var(--deep-slate); }
+.dev-banner__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 12px; padding-bottom: 12px; }
+.dev-banner p { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
+.dev-banner a { color: var(--deep-slate); font-weight: 600; text-decoration-color: var(--aged-amber); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.dev-banner__close { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: var(--radius-sm); background: transparent; color: var(--deep-slate); cursor: pointer; }
+.dev-banner__close:hover { background: rgba(184, 137, 58, 0.18); }
+.dev-banner__close:focus-visible { outline: 2px solid var(--aged-amber); outline-offset: 2px; }

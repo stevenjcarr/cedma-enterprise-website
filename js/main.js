@@ -204,3 +204,27 @@
   var year = String(new Date().getFullYear());
   Array.prototype.forEach.call(document.querySelectorAll("[data-year]"), function (el) { el.textContent = year; });
 })();
+
+// Development site: show a dismissible notice on the preview host only
+(function () {
+  "use strict";
+  if (location.hostname !== "newcedma.dunholm.me.uk") return;
+  var KEY = "cedma-dev-banner-dismissed";
+  try { if (sessionStorage.getItem(KEY) === "1") return; } catch (e) { /* storage blocked: show it */ }
+  var bar = document.createElement("div");
+  bar.className = "dev-banner";
+  bar.setAttribute("role", "region");
+  bar.setAttribute("aria-label", "Development site notice");
+  bar.innerHTML = '<div class="container dev-banner__inner">' +
+    '<p>This is a development version of the CEdMA Enterprise site and may not be accurate. ' +
+    'The live site is at <a href="https://cedma-enterprise.org" target="_blank" rel="noopener">cedma-enterprise.org</a>.</p>' +
+    '<button type="button" class="dev-banner__close" aria-label="Dismiss this notice">' +
+    '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
+    '</button></div>';
+  var skip = document.querySelector(".skip-link");
+  if (skip) skip.insertAdjacentElement("afterend", bar); else document.body.insertBefore(bar, document.body.firstChild);
+  bar.querySelector(".dev-banner__close").addEventListener("click", function () {
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) { /* closes for this page only */ }
+    bar.remove();
+  });
+})();
