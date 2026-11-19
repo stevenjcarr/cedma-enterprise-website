@@ -808,6 +808,47 @@ button.cta-link { font-size: 1rem; font-weight: 600; line-height: inherit; color
 .member-ticker__item { flex: 0 0 auto; height: 64px; display: flex; align-items: center; justify-content: center; }
 /* Each logo sets --b (below 1 darkens) or --o (below 1 lightens) so they all show at a similar gray */
 .member-ticker__item img { display: block; filter: grayscale(1) brightness(var(--b, 1)); opacity: var(--o, 1); transition: filter 0.2s ease, opacity 0.2s ease; }
+/* Per-logo weight adjustments, kept here rather than in inline styles so they work under the site's Content Security Policy */
+.member-ticker__item img[src$="/algosec.svg"] { --b: 0.75; }
+.member-ticker__item img[src$="/aws.svg"] { --o: 0.91; }
+.member-ticker__item img[src$="/aveva.svg"] { --o: 0.68; }
+.member-ticker__item img[src$="/bmc-helix.png"] { --o: 0.93; }
+.member-ticker__item img[src$="/camunda.png"] { --o: 0.55; }
+.member-ticker__item img[src$="/certiverse.svg"] { --o: 0.82; }
+.member-ticker__item img[src$="/cfd-direct.png"] { --o: 0.65; }
+.member-ticker__item img[src$="/cloudshare.svg"] { --o: 0.78; }
+.member-ticker__item img[src$="/cohesity.svg"] { --b: 0.81; }
+.member-ticker__item img[src$="/dassault-systemes.svg"] { --o: 0.83; }
+.member-ticker__item img[src$="/databricks.svg"] { --o: 0.70; }
+.member-ticker__item img[src$="/eurekos.svg"] { --o: 0.70; }
+.member-ticker__item img[src$="/f5-networks.svg"] { --b: 0.95; --o: 0.8; }
+.member-ticker__item img[src$="/genesys.svg"] { --o: 0.69; }
+.member-ticker__item img[src$="/google-chrome.svg"] { --b: 0.95; --o: 0.8; }
+.member-ticker__item img[src$="/hpe.svg"] { --o: 0.68; }
+.member-ticker__item img[src$="/hitachi-vantara.png"] { --o: 0.62; }
+.member-ticker__item img[src$="/infoblox.png"] { --o: 0.58; }
+.member-ticker__item img[src$="/infor.svg"] { --o: 0.72; }
+.member-ticker__item img[src$="/jamf.svg"] { --o: 0.79; }
+.member-ticker__item img[src$="/kinaxis.svg"] { --o: 0.68; }
+.member-ticker__item img[src$="/kryterion.png"] { --o: 0.83; }
+.member-ticker__item img[src$="/mongodb.svg"] { --o: 0.66; }
+.member-ticker__item img[src$="/netapp.svg"] { --o: 0.58; }
+.member-ticker__item img[src$="/onestream.png"] { --o: 0.60; }
+.member-ticker__item img[src$="/opus-2.png"] { --o: 0.70; }
+.member-ticker__item img[src$="/pega.svg"] { --o: 0.79; }
+.member-ticker__item img[src$="/ping.svg"] { --o: 0.78; }
+.member-ticker__item img[src$="/proofpoint.svg"] { --o: 0.68; }
+.member-ticker__item img[src$="/readytech.svg"] { --o: 0.85; }
+.member-ticker__item img[src$="/red-hat.svg"] { --o: 0.66; }
+.member-ticker__item img[src$="/sage.svg"] { --b: 0.64; }
+.member-ticker__item img[src$="/salesforce.svg"] { --o: 0.85; }
+.member-ticker__item img[src$="/servicenow.svg"] { --o: 0.84; }
+.member-ticker__item img[src$="/software-ag.svg"] { --o: 0.72; }
+.member-ticker__item img[src$="/ssc-blueprism.svg"] { --b: 0.82; }
+.member-ticker__item img[src$="/synappz.svg"] { --o: 0.71; }
+.member-ticker__item img[src$="/teradata.svg"] { --b: 0.82; }
+.member-ticker__item img[src$="/unit4.svg"] { --o: 0.55; }
+.member-ticker__item img[src$="/workato.svg"] { --o: 0.60; }
 /* Logos with white text on a light brand color need a darker gray to stay readable */
 .member-ticker__item--deepen img { filter: grayscale(1) brightness(0.7) contrast(2); }
 .member-ticker__item img:hover { filter: none; opacity: 1; }
